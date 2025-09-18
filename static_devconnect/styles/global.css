@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --cor-preto: #000000;
+    --cor-branco: #ffffff;
+
+    --cor-cinza-escuro1: #b6b6b6;
+    --cor-cinza-escuro2: #4d4d4d;
+    --cor-cinza-escuro3: #7d7d7d;
+    --cor-cinza-escuro4: #d1d1d1;
+    --cor-cinza-medio: #e5e5e5;
+    --cor-cinza-claro: #fafafa;
+    --cor-ciano: #00cbb7;
+    --cor-azul: #008cff;
+    --cor-azul-escuro: #0017e8;
+
+    --borda: 1px solid var(--cor-preto);
+    --borda-arredondada: 2px;
+
+    --tamanho-fonte-lg: 20px;
+    --tamanho-fonte-md: 16px;
+    --tamanho-fonte-sm: 14px;
+}
+
+/*SELETOR GLOBAL*/
+*{
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/* o valor total do tamanho do elemento conta tanto com espaços interno/externo e borda */
+    outline-color: var(--cor-azul);
+}
+ 
+body{
+    background-color: var(--cor-cinza-claro);
+}
+
+h1{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+/* formulario */
+input{
+    width: 100%;
+    height: 35px;
+    border: var(--borda);
+    background-color: var(--cor-cinza-claro);
+}
+
+.formulario-botao-azul{
+    background-color: var(--cor-azul);
+    border: none;
+    height: 35px;
+    color: var(--cor-preto);
+    font-size: var(--tamanho-fonte-sm);
+    font-weight: 600;
+    transition: background-color 0.5s;
+}
+.cadastro-botao-azul{
+    background-color: var(--cor-azul);
+    border-radius: var(--borda-arredondada);
+    border: none;
+    color: var(--cor-preto);
+    font-size: var(--tamanho-fonte-sm);
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+#cabecalho{
+    background-color: var(--cor-branco);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-ciano);
+}
+#cabecalho > nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1440px;
+    height: 100%;
+}
+#logo-mobile{
+    display: none;
+}
+.cabecalho-acoes{
+ display: flex;
+ align-items: center;
+ gap: 15px;
+}
+.cabecalho-acoes > a {
+    display: flex;
+    align-items: center;
+}
+.foto-perfil{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+#foto-stories{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.estilo-formulario{
+    width: 100%;
+    border: 2px solid var(--cor-ciano);
+    background-color:transparent;
+}
+input[type="file"] {
+    display: none;
+  }
+  
+  /* Estiliza o "botão fake" */
+  .botao-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--cor-cinza-escuro1);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.5s;
+    border: var(--borda);
+  }
+  
+  .botao-upload:hover {
+    background: var(--cor-cinza-escuro2);
+  }
+
+
+/* RESPONSIVO */
+@media only screen and (max-width: 485px){
+    #logo-mobile{
+        display: initial;
+    }
+    #logo-pc{
+        display: none;
+    }
+}
