@@ -38,3 +38,10 @@ id_usuario_seguir INT NOT NULL, --pessoa que quer seguir
 id_usuario_seguida INT NOT NULL, --pessoa que sera seguida
 PRIMARY KEY(id_usuario_seguir, id_usuario_seguida)
 );
+ALTER TABLE tb_seguidor
+ADD CONSTRAINT id_usuario_seguir FOREIGN KEY (id_usuario_seguir) REFERENCES tb_usuario(id)
+
+ADD CONSTRAINT id_usuario_seguida FOREIGN KEY (id_usuario_seguida) REFERENCES tb_usuario(id)
+
+
+

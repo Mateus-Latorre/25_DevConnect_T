@@ -2,8 +2,8 @@
 INSERT INTO tb_usuario(nome_completo, nome_usuario, email, senha, foto_perfil_url)
 VALUES('Mateus Latorre','mateus_latorre','mateuslatorre@gmail.com','12345ma','fotoperfildevconnect.com'),
 ('João Paulo','joaozin123','joaopa123@gmail.com','jpa12','fotocarropreto.com'),
-('Ana Silva','aninha:)','silva47@gmail.com','silva4632','fotogatinhofofinho.com');
-
+('Ana Silva','aninha:)','silva47@gmail.com','silva4632','fotogatinhofofinho.com'),
+('Pedro André','pedrin_top','pedrin789@yahoo','pedro0989','fotopedrolegal.com');
 INSERT INTO tb_publicacao(id_usuario, descricao, imagem_url, data_publicacao)
 VALUES(5,'Imagem da empresa DevConnect','logo_devconnect.com','2025-10-02'),
 (7,'Esse é o carro dos meus sonhos','foto-carro-preto-insano.com','2025-10-01'),
@@ -19,7 +19,14 @@ VALUES(5,2),
 (8,3),
 (7,4);
 
+
 INSERT INTO tb_seguidor(id_usuario_seguir,id_usuario_seguida)
 VALUES(5,8),
 (8,7),
 (7,5);
+
+ALTER TABLE tb_curtida
+ADD PRIMARY KEY (id_usuario, id_publicacao);
+DELETE FROM tb_curtida
+WHERE id_usuario = 5      
+  AND id_publicacao = 2;  
