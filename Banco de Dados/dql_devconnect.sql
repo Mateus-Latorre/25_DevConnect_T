@@ -54,3 +54,8 @@ FROM tb_curtida Cur
 RIGHT JOIN tb_usuario U ON Cur.id_usuario = U.id
 WHERE Cur.id IS NULL;
 
+SELECT * FROM tb_usuario
+SELECT * FROM tb_publicacao
+SELECT * FROM tb_comentario
+SELECT * FROM tb_curtida
+SELECT * FROM tb_seguidor

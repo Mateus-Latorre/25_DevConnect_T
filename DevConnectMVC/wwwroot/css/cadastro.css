@@ -1,0 +1,72 @@
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main > div {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-start;
+}
+#secao-login{
+    max-width: 340px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#formulario-cadastro{
+    border: var(--borda);
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+    justify-content: space-evenly;
+}
+.estilo-cadastro{
+    height: 675px;
+    width: 100%;
+    max-width: 340px;
+    border: var(--borda);
+    background-color: var(--cor-ciano);
+}
+#formulario-cadastro > div{
+    width: 100%;
+}
+#formulario-cadastro > div > label{
+    font-size: var(--tamanho-fonte-sm);
+    color: var(--cor-cinza-escuro3);
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+#formulario-cadastro > div > label.botao-upload{
+    border:  var(--borda);
+    display: flex;
+    justify-content: center;
+}
+#formulario-cadastro > p{
+    text-align: center;
+    font-size: 13px;
+    color: var(--cor-preto);
+}
+.cadastro-botao-azul{
+    border: var(--borda);
+    width: 100%;
+}
+.cadastro-botao-azul:hover{
+    background-color: var(--cor-azul-escuro);
+}
+#formulario-cadastro > a, #secao-login > p > a{
+    text-decoration: none;
+    color: var(--cor-azul);
+}
+#secao-login > p{
+    font-size: var(--tamanho-fonte-md);
+}
+/* Esconde o input original */

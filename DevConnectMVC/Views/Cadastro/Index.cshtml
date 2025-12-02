@@ -1,0 +1,39 @@
+    <link rel="stylesheet" href="~/css/cadastro.css" />
+    <h1>Tela Principal Cadastro</h1>
+    <main>
+        <div>
+            <form id="formulario-cadastro" class="estilo-cadastro">
+                <img src="/images/DevConnect logo 1.svg" alt="">
+                <p>Cadastre-se para comunidade esxclusiva de desenvolvedores(as)</p>
+                <div>
+                    <label for="">Nome e Sobrenome</label>
+                    <input type="text"  id="">
+                 </div>
+                 <div>
+                    <label for="nome-ususario">Nome de Usuário</label>
+                    <input type="text"  id="">
+                </div>
+                <div>
+                    <label for="">Email</label>
+                    <input type="email"  id="">
+                 </div>
+                <div>
+                    <label for="">Senha</label>
+                    <input type="password" id="">
+                 </div>
+                 <div>
+                    <label for="arquivo" class="botao-upload">Faça o upload da sua imagem</label>
+                    <input type="file" id="arquivo">
+                    
+                 </div>
+
+                 <button type="submit" class="cadastro-botao-azul" a asp-controller="Usuario" asp-action="Perfil">Cadastrar-se</button>    
+                <p>Ao se cadastrar, você concorda com a nossos Termos, Política de Dados e Política de Cookies.</p>
+
+            </form>
+           
+                <section id="secao-login" class="estilo-cadastro">
+                    <p>Já tem uma conta?<a asp-controller="Home" asp-action="Index"">Conecte-se</a></p>
+                </section>
+        </div>
+    </main>

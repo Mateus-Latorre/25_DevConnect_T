@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "DevConnect - Login";
+}
+<link rel="stylesheet" href="~/css/login.css" />
+<h1>Tela Principal login</h1>
+<main>
+    <div>
+
+        <form id="formulario" class="estilo-formulario">
+            <img src="/images/DevConnect logo 1.svg" alt="">
+
+            <div>
+                <label for="">Nome de Usuário</label>
+                <input type="text" name="" id="">
+            </div>
+            <div>
+                <label for="">Senha</label>
+                <input type="password" name="" id="">
+            </div>
+
+            <button type="submit" class="formulario-botao-azul" asp-controller="Usuario" asp-action="Perfil">Entrar</button>
+            <p>ou</p>
+            <a href="">Esqueceu a senha</a>
+        </form>
+
+        <section id="secao-cadastro" class="estilo-formulario">
+            <p>Não tem uma conta? <a a asp-controller="Cadastro" asp-action="Index">Cadastre-se</a></p>
+        </section>
+
+        <p class="informacao-do-aplicativo">Obtenha o aplicativo</p>
+
+        <section id="instalacao">
+            <img src="/images/app-store.svg" alt="imagem informando para baixar no app store.">
+            <img src="/images/google-play.svg" alt="imagem informando para baixar no play store">
+        </section>
+
+    </div>
+</main>
