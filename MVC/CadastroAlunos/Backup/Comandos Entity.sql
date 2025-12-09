@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold "Server=NOTE09-S21\SQLEXPRESS;User Id=sa; Password=senai@134; Database=CadastroAlunos;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c CadastroAlunosContext --data-annotations -f

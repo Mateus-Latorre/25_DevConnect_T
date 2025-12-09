@@ -1,0 +1,122 @@
+@{
+    ViewData["Title"] = "DevConnect - Perfil";
+}
+    <link rel="stylesheet" href="~/css/perfil.css" />
+    <h1>Tela Perfil - DevConnect</h1>
+
+    <header id="cabecalho">
+        <nav>
+
+            <a id="logo-pc" asp-controller="Feed" asp-action="Index">
+                <img src="../images/DevConnect logo 1.svg" alt="Logo da empresa DevConnect">
+            </a>
+            <a id="logo-mobile" asp-controller="Feed" asp-action="Index">
+                <img src="../images/DevCon logo.svg" alt="Logo da empresa DevConnect">
+            </a>
+        </nav>
+        <div class="cabecalho-acoes">
+            <a asp-controller="Feed" asp-action="Index"><img src="../images/casa azul.svg" alt=""></a>
+            <a href="#"><img src="../images/coracao azul.svg" alt=""></a>
+            <a href="#"><img class="foto-perfil" src="../images/cassio.webp" alt="Foto de perfil"></a>
+        </div>
+    </header>
+    <main>
+        <div class="container-flex-perfil">
+            <section id="perfil-usuario">
+
+                <a asp-controller="Usuario" asp-action="Perfil">
+                    <img class="foto-perfil-principal" src="../images/cassio.webp" alt="Foto de perfil">
+                </a>
+                <section id="cabecalho-perfil">
+                    <a href="#">
+                        <span class="nome-perfil">goleiro_calssio</span>
+                    </a>
+                    <section class="info-perfil">
+
+                        <a href="#">
+                            <p>2 publicações</p>
+                        </a>
+                        <a href="#">
+                            <p>119 seguindo</p>
+                        </a>
+                        <a href="#">
+                            <p>96 seguidores</p>
+                        </a>
+
+                    </section>
+                    <section class="acoes-perfil">
+                        <p class="nome-usuario">Cassio Ramos</p>
+                        <a href="#">
+                            <p>Editar perfil</p>
+                        </a>
+                        <a asp-controller="Usuario" asp-action="Index">
+                            <p>Sair</p>
+                        </a>
+                    </section>
+                </section>
+            </section>
+<hr>
+            <section id="publicacoes">
+                <article class="card-publi">
+                    <section class="texto-publi">
+                        <img src="../images/postagem preto.svg" alt="">
+                        <p>PUBLICAÇÕES</p>
+                    </section>
+                    <header>
+                        <a href="#">
+                            <img class="foto-perfil" src="../images/cassio.webp" alt="">
+                            goleiro_calssio
+                        </a>
+                    </header>
+                    <figure>
+                        <h4>Eu adoro quando eu consigo fazer uma defesa incrível e fico muito alegre e sorrio para
+                            meus fãs</h4>
+                        <figcaption class="descricao-publicacao">
+                            goleiro_calssio
+                            <p>Goleiro Calssio falando como adora defender</p>
+                        </figcaption>
+                        <div class="interacoes-publi">
+                            <button>
+                                <img src="../images/coracao preto.svg" alt="">
+                            </button>
+                            <button>
+                                <img src="../images/mensagem preto.svg" alt="">
+                            </button>
+                            <span>8,11 bilhões curtidas</span>
+                        </div>
+                    </figure>
+                    <button type="button">
+                        Ver mais comentários...
+                    </button>
+                </article>
+                <article class="card-publi">
+                    <header>
+                        <a href="#">
+                            <img class="foto-perfil" src="../images/cassio.webp" alt="">
+                            goleiro_calssio
+                        </a>
+                    </header>
+                    <figure>
+                        <h4>Eu adoro quando eu consigo fazer uma defesa incrível e fico muito alegre e sorrio para
+                            meus fãs</h4>
+                        <figcaption class="descricao-publicacao">
+                            goleiro_calssio
+                            <p>Goleiro Calssio falando como adora defender</p>
+                        </figcaption>
+                        <div class="interacoes-publi">
+                            <button>
+                                <img src="../images/coracao preto.svg" alt="">
+                            </button>
+                            <button>
+                                <img src="../images/mensagem preto.svg" alt="">
+                            </button>
+                            <span>8,11 bilhões curtidas</span>
+                        </div>
+                    </figure>
+                    <button type="button">
+                        Ver mais comentários...
+                    </button>
+                </article>
+            </section>
+        </div>
+    </main>

@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "DevConnect - Cadastro";
+}
+@model DevConnect.Models.TbUsuario
+<link rel="stylesheet" href="~/css/cadastro.css" />
+<script defer>
+    const usuarioNovoCadastrado = "@ViewBag.usuarioNovoCadastro";
+    if (usuarioNovoCadastrado == "Nao Cadastrado") {
+        alert("Usuário não cadastrado! Tente Novamente 😢");
+    }
+
+</script>
+<h1>Tela Principal Cadastro</h1>
+<main>
+    <div>
+        <form id="formulario-cadastro" class="estilo-cadastro" enctype="multipart/form-data" asp-action="Index"
+            asp-controller="Usuario">
+            <img src="/images/DevConnect logo 1.svg" alt="">
+            <p>Cadastre-se para comunidade esxclusiva de desenvolvedores(as)</p>
+            <div>
+                <label for="">Nome e Sobrenome</label>
+                <input type="text" asp-for="NomeCompleto">
+            </div>
+            <div>
+                <label for="">Nome de Usuário</label>
+                <input type="text" asp-for="NomeUsuario">
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input type="email" asp-for="Email">
+            </div>
+            <div>
+                <label for="">Senha</label>
+                <input type="password" asp-for="Senha">
+            </div>
+            <div>
+                <label for="arquivo" class="botao-upload">Faça o upload da sua imagem</label>
+                <input type="file" id="arquivo" name="imagem">
+
+            </div>
+
+            <button type="submit" class="cadastro-botao-azul">Cadastrar-se</button>
+            <p>Ao se cadastrar, você concorda com a nossos Termos, Política de Dados e Política de Cookies.</p>
+
+        </form>
+
+        <section id="secao-login" class="estilo-cadastro">
+            <p>Já tem uma conta?<a asp-controller="Home" asp-action="Index"">Conecte-se</a></p>
+                </section>
+        </div>
+    </main>
