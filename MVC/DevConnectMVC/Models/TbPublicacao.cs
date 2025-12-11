@@ -18,7 +18,7 @@ public partial class TbPublicacao
 
     [Column("descricao")]
     [StringLength(100)]
-    public string? Descricao { get; set; }
+    public string Descricao { get; set; } = null!;
 
     [Column("imagem_url")]
     [StringLength(100)]

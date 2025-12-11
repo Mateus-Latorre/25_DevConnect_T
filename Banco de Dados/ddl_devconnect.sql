@@ -38,6 +38,7 @@ id_usuario_seguir INT NOT NULL, --pessoa que quer seguir
 id_usuario_seguida INT NOT NULL, --pessoa que sera seguida
 PRIMARY KEY(id_usuario_seguir, id_usuario_seguida)
 );
-
-
+select * from tb_usuario
+delete from tb_usuario
+where id = 15
 

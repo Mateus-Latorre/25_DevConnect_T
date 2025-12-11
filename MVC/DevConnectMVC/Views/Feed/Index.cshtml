@@ -1,7 +1,19 @@
+ @model List<DevConnect.Models.TbPublicacao>;
+ @using DevConnect.Controllers;
+@using Microsoft.IdentityModel.Tokens
  @{
     ViewData["Title"] = "DevConnect - Feed";
 }
  <link rel="stylesheet" href="~/css/feed.css" />
+ <link rel="stylesheet" href="~/css/perfil.css" />
+ <script defer>
+    const PublicacaoCadastrada = "@ViewBag.PublicacaoCadastrada"
+    if (PublicacaoCadastrada == "Nao cadastrada") {
+        alert("Não foi possível criar a publicação! Tente Novamente 😢");
+    }else if (PublicacaoCadastrada == "Cadastrada") {
+        alert("Publicação criada com sucesso! 🎉");
+}
+</script>
  <h1>Tela Feed - DevConnect</h1>
 
      <!-- Header -->
@@ -70,13 +82,13 @@
         </section>
         <section id="cadastro-publi">
             <h2>Publicação</h2>
-            <form action="">
-                <textarea name="" placeholder="Digite a descrição do post..." id=""></textarea>
+            <form asp-action="Index" asp-controller="Feed" enctype="multipart/form-data">
+                <textarea name="Descricao" placeholder="Digite a descrição do post..." id="" required></textarea>
 
                 <footer>
                 <div>
                      <label for="arquivo" class="botao-upload">Faça o upload da sua imagem</label>
-                    <input type="file" id="arquivo">
+                    <input type="file" id="arquivo" name = "imagem">
                 </div>
                 <button type="submit" class="formulario-botao-azul">Postar</button>
                 </footer>
@@ -85,18 +97,21 @@
         </section>
 
         <section id="publicacoes">
+        @foreach (TbPublicacao publicacoes in Model){
+            if(!publicacoes.ImagemUrl.IsNullOrEmpty()){
         <article class="card-publi">
            <header>
             <a href="#">
-                <img class="foto-perfil" src="/images/cassio.webp" alt="">
-                goleiro_calssio
+                <img class="foto-perfil" src="~/images/@publicacoes.IdUsuarioNavigation?.FotoPerfilUrl" alt="">
+                @publicacoes.IdUsuarioNavigation?.NomeUsuario
             </a>
            </header>
 <figure>
-    <img class="imagem-publi" src="/images/post-cassio.svg" alt="">
+
+    <img class="imagem-publi" src=~/images/@publicacoes.ImagemUrl alt="">
     <figcaption class="descricao-publicacao">
-        cassio
-        <p>Goleiro Calssio sorrindo com alegria para um fã</p>
+        <p>@publicacoes.Descricao <br>
+        @publicacoes.DataPublicacao</p>
     </figcaption>
     <div class="interacoes-publi">
         <button>
@@ -107,11 +122,41 @@
         </button>
         <span>8,11 bilhões curtidas</span>
     </div>
+    
 </figure>
 <button type="button">
     Ver mais comentários...
 </button>
         </article>
-        </section> 
+        }else{
+            <article class="card-publi">
+                    <header>
+                        <a href="#">
+                            <img class="foto-perfil" src="../images/cassio.webp" alt="">
+                            goleiro_calssio
+                        </a>
+                    </header>
+                    <figure>
+                        <h4>@publicacoes.Descricao</h4>
+                        <figcaption class="descricao-publicacao">
+                            <p>@publicacoes.DataPublicacao</p>
+                        </figcaption>
+                        <div class="interacoes-publi">
+                            <button>
+                                <img src="../images/coracao preto.svg" alt="">
+                            </button>
+                            <button>
+                                <img src="../images/mensagem preto.svg" alt="">
+                            </button>
+                            <span>8,11 bilhões curtidas</span>
+                        </div>
+                    </figure>
+                    <button type="button">
+                        Ver mais comentários...
+                    </button>
+                </article>
+        }
+
+        }</section> 
        </div>
     </main>
